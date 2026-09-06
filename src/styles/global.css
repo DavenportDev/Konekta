@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --color-konekta-bg: #09090f;
+  --color-konekta-purple: #7c3aed;
+  --color-konekta-purpleDark: #6d28d9;
+  --color-konekta-purpleLight: #a78bfa;
+  --color-konekta-blue: #3b82f6;
+  --color-konekta-blueLight: #60a5fa;
+
+  --color-konekta-surface: #0f0f17;
+  --color-konekta-surfaceLight: #1a1a24;
+  --color-konekta-surfaceGlass: rgba(255,255,255,0.05);
+
+  --color-konekta-text: #e5e7eb;
+  --color-konekta-textMuted: #9ca3af;
+  --color-konekta-textPurple: #c4b5fd;
+
+  --color-konekta-success: #10b981;
+  --color-konekta-warning: #f59e0b;
+  --color-konekta-danger: #ef4444;
+}
