@@ -1,0 +1,26 @@
+<svg
+  width="64"
+  height="64"
+  viewBox="0 0 64 64"
+  xmlns="http://www.w3.org/2000/svg"
+  fill="currentColor"
+>
+  <!-- Left vertical bar -->
+  <rect x="14" y="10" width="10" height="44" rx="4" />
+
+  <!-- Upper diagonal arm -->
+  <path
+    d="M24 32 L46 14"
+    stroke="currentColor"
+    stroke-width="10"
+    stroke-linecap="round"
+  />
+
+  <!-- Lower diagonal arm -->
+  <path
+    d="M24 32 L46 50"
+    stroke="currentColor"
+    stroke-width="10"
+    stroke-linecap="round"
+  />
+</svg>

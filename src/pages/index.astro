@@ -1,10 +1,10 @@
 ---
+import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import LanguagePage from "../components/LanguagePage.jsx";
 ---
 
-<html>
-  <body>
-    <h1>Coming Soon.</h1>
-    <LanguagePage client:load />
-  </body>
-</html>
+<BaseLayout>
+  <h1 class="text-3xl font-bold p-5 text-konekta-text tracking-tight">Konekta</h1>
+  <LanguagePage client:load />
+</BaseLayout>

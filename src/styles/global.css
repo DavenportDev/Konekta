@@ -2,21 +2,50 @@
 
 @theme {
   --color-konekta-bg: #09090f;
-  --color-konekta-purple: #7c3aed;
-  --color-konekta-purpleDark: #6d28d9;
-  --color-konekta-purpleLight: #a78bfa;
+  --color-konekta-purple: #28164B;
+  --color-konekta-purple-dark: #6d28d9;
+  --color-konekta-purple-light: #b89cfb;
+
   --color-konekta-blue: #3b82f6;
-  --color-konekta-blueLight: #60a5fa;
+  --color-konekta-blue-light: #60a5fa;
 
   --color-konekta-surface: #0f0f17;
-  --color-konekta-surfaceLight: #1a1a24;
-  --color-konekta-surfaceGlass: rgba(255,255,255,0.05);
+  --color-konekta-surface-light: #111128;
+  --color-konekta-surface-glass: rgba(255,255,255,0.20);
 
   --color-konekta-text: #e5e7eb;
-  --color-konekta-textMuted: #9ca3af;
-  --color-konekta-textPurple: #c4b5fd;
+  --color-konekta-text-muted: #9ca3af;
+  --color-konekta-text-purple: #c4b5fd;
 
   --color-konekta-success: #10b981;
   --color-konekta-warning: #f59e0b;
   --color-konekta-danger: #ef4444;
+}
+bbody {
+  background: #0E0E12; /* deep base */
+  position: relative;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(120, 60, 255, 0.25),
+      rgba(0, 0, 0, 0)
+    ),
+    linear-gradient(
+      to right,
+      rgba(120, 60, 255, 0.15),
+      rgba(0, 0, 0, 0)
+    );
+
+  transform: rotate(15deg);
+  filter: blur(80px);
 }
