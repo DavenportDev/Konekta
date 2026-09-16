@@ -1,14 +1,21 @@
 ---
-
+import Logo from "../../public/branding/logo.svg";
 ---
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <slot name="head" />
   </head>
 
   <body class="bg-konekta-bg">
+    <header class="konekta-header hidden mb-3">
+      <h1 class="flex text-3xl font-bold p-5 text-konekta-text tracking-tight">
+        <Logo class="text-white w-9 h-9" />
+        <span class="pl-3">Konekta</span>
+      </h1>
+    </header>
     <slot />
   </body>
 </html>

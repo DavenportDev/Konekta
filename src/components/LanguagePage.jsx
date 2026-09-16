@@ -1,7 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LanguageSelect from "./LanguageSelect.jsx";
+import Logo from "../../public/branding/logo.svg";
 
 export default function LanguagePage() {
+  // Splash screen state
+  const [showSplash, setShowSplash] = useState(true);
+
+  // Selected language state
   const [selected, setSelected] = useState("en");
 
   const languageHeaders = {
@@ -26,6 +31,42 @@ export default function LanguagePage() {
     ru: "Выберите ваш язык",              // Russian
   };
 
+  // Splash timer
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const splash = document.querySelector(".splash-screen");
+      splash?.classList.add("animate-fade-out");
+      
+      setTimeout(() => {
+        setShowSplash(false);
+        document.querySelector(".konekta-header")?.classList.remove("hidden");
+      }, 700); // Wait for the fade-out animation to complete before hiding the splash screen
+
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Splash screen
+  if(showSplash) {
+    return (
+      <div className="splash-screen flex flex-col items-center justify-center h-screen w-full text-white">
+        <svg className="w-20 h-20 mb-4 text-white" viewBox="0 0 731 716" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="660.807" cy="388" r="70" fill="currentColor"/>
+          <circle cx="593.307" cy="652.5" r="63.5" fill="currentColor"/>
+          <circle cx="481.807" cy="50" r="50" fill="currentColor"/>
+          <circle cx="659.807" cy="143" r="69" fill="currentColor"/>
+          <circle cx="491.807" cy="222" r="33" fill="currentColor"/>
+          <path d="M188.807 655.88V698.981C188.807 706.171 182.955 712 175.737 712H16.8772C9.65859 712 3.80684 706.171 3.80684 698.981V475.283L188.807 655.88ZM188.807 594.689L3.80684 414.093V387.739L188.807 213.966V594.689ZM175.737 2C182.955 2.00019 188.807 7.82884 188.807 15.0186V138.698L3.80684 312.472V15.0186C3.80684 7.82884 9.65859 2.00018 16.8772 2H175.737Z" fill="currentColor"/>
+          <path d="M4.30687 414.5C2.1402 411.167 -4.19316 400.5 4.30687 387.5C4.30687 387.5 6.47353 417.833 4.30687 414.5Z" fill="currentColor"/>
+          <path d="M240.807 371H186.307V432H252.307C297.907 434 333.64 457.5 345.807 469L527.807 636C530.607 638 530.307 646.167 529.807 650L561.307 598C557.807 600 556.307 598.333 555.307 597.5L396.307 452C388.307 440.8 399.64 435 406.307 433.5L592.307 423C599.507 423 603.973 427.667 605.307 430L592.807 374C590.307 383 580.473 381.333 576.307 382L414.307 390.5C399.107 383.7 405.974 371.333 411.307 366L621.307 204.5C624.107 202.5 628.807 202.667 630.807 203L593.807 159C594.207 161.8 592.64 165.167 591.807 166.5L531.807 214.5C529.807 216.9 526.64 214.833 525.307 213.5L520.807 207L470.307 246C473.907 250.4 472.807 255.5 471.807 257.5L348.307 354C322.707 372 312.974 362.5 311.307 355.5V271.5C313.307 235.1 333.474 208.667 343.307 200L464.307 96.5L433.307 61L430.307 63.5L299.307 176C274.507 205.2 265.974 245.833 264.807 262.5V355.5C264.007 365.9 248.474 370.167 240.807 371Z" fill="currentColor"/>
+        </svg>
+        <h1 className="text-4xl font-bold">Konekta</h1>
+      </div>
+    );
+  }
+
+  // Language selection effect
   return (
     <div className="text-konekta-text p-5 pt-0">
       <h2 className="text-lg font-bold mb-5 text-konekta-text">
